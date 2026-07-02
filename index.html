@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escova 3 em 1 Designer Profissional | Pagamento na Entrega</title>
+    <!-- Google Fonts: Poppins para um visual moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #ff477e; /* Rosa magenta premium vibrante */
+            --primary-hover: #e03a6c;
+            --secondary: #00f5d4; /* Verde/Azul turquesa neon para altíssimo contraste e destaque */
+            --bg-base: #1d1521; /* A sua cor base roxo profundo */
+            --dark: #0d0910;
+            --text: #f3f4f6; /* Texto claro para leitura perfeita no fundo escuro */
+            --text-muted: #9ca3af;
+            --shadow-lg: 0 20px 25px -5px rgba(255, 71, 126, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            /* Gradiente vertical suave cruzando toda a página para dar profundidade */
+            background: linear-gradient(180deg, #1d1521 0%, #140e17 50%, #0d0910 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Topbar de Aviso de Frete */
+        .topbar {
+            background: #0d0910;
+            border-bottom: 1px solid rgba(255, 71, 126, 0.2);
+            color: #fff;
+            text-align: center;
+            padding: 10px 10px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .topbar span {
+            color: var(--secondary);
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Container Geral */
+        .container {
+            width: 92%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section com Gradiente Radial Iluminado */
+        .hero {
+            /* Um ponto de luz roxo mais claro no canto superior direito simula iluminação de estúdio */
+            background: radial-gradient(circle at 85% 30%, #3a2744 0%, #1d1521 65%, #140e17 100%);
+            padding: 90px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        @media (max-width: 992px) {
+            .hero { padding: 50px 0; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+        }
+
+        .tag {
+            background: rgba(255, 71, 126, 0.15);
+            color: #ff6593;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        h1 span { 
+            color: var(--primary); 
+            text-shadow: 0 0 20px rgba(255, 71, 126, 0.3);
+        }
+
+        @media (max-width: 576px) {
+            h1 { font-size: 2.3rem; }
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            margin-bottom: 30px;
+        }
+
+        /* Destaque do Pagamento na Entrega (Design Escuro Premium) */
+        .trust-badge-delivery {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            border-radius: 4px 16px 16px 4px;
+            margin-bottom: 35px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 992px) { 
+            .trust-badge-delivery { flex-direction: column; text-align: center; padding: 25px 20px; } 
+        }
+        
+        .trust-badge-delivery i {
+            font-size: 2.3rem;
+            color: var(--secondary);
+            background: rgba(0, 245, 212, 0.1);
+            padding: 15px;
+            border-radius: 50%;
+            min-width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .trust-badge-delivery h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .trust-badge-delivery p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Botão de Ação CTA Explosivo */
+        .btn-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, #d91b5c 100%);
+            color: #fff;
+            padding: 20px 40px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: pulse 2.5s infinite;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-cta:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 25px 35px -5px rgba(255, 71, 126, 0.45);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 71, 126, 0.6); }
+            70% { box-shadow: 0 0 0 18px rgba(255, 71, 126, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 71, 126, 0); }
+        }
+
+        /* Imagem do Produto com Brilho Neon de Fundo */
+        .product-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .product-image-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 75%;
+            height: 75%;
+            background: rgba(255, 71, 126, 0.15);
+            border-radius: 50%;
+            filter: blur(50px);
+            z-index: 1;
+        }
+        .product-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.5s ease;
+        }
+        .product-img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Seção de Benefícios */
+        .benefits {
+            padding: 100px 0;
+            background-color: #140e17; /* Tom ligeiramente mais escuro para quebrar as seções */
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 60px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+        .section-title span { color: var(--primary); }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .benefit-card:hover { 
+            transform: translateY(-8px); 
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 71, 126, 0.3);
+            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5);
+        }
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            background: rgba(255, 71, 126, 0.1);
+            width: 80px;
+            height: 80px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+        }
+        .benefit-card h3 { margin-bottom: 15px; font-size: 1.35rem; color: #ffffff; font-weight: 700; }
+        .benefit-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* Nova Seção de Prova Social (Depoimentos) */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--bg-base);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        @media (max-width: 768px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 35px;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+        .testimonial-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .testimonial-img {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+        .testimonial-info h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .testimonial-stars {
+            color: #ffb703;
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+        .testimonial-comment {
+            color: #e2e8f0;
+            font-size: 1rem;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        .verified-badge {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: auto;
+            font-weight: 500;
+        }
+
+        /* Oferta Irresistível */
+        .offer-section {
+            padding: 100px 0;
+            text-align: center;
+            background: radial-gradient(circle at center, #251b2b 0%, #1d1521 100%);
+        }
+        .offer-box {
+            max-width: 680px;
+            margin: 0 auto;
+            border: 2px solid rgba(255, 71, 126, 0.25);
+            border-radius: 28px;
+            padding: 60px 40px;
+            background: #140e17;
+            position: relative;
+            box-shadow: 0 30px 60px -15px rgba(255, 71, 126, 0.2);
+        }
+        @media (max-width: 576px) {
+            .offer-box { padding: 40px 20px; }
+        }
+        
+        /* Barra de Escassez */
+        .scarcity-bar-container {
+            max-width: 300px;
+            margin: 20px auto 30px auto;
+        }
+        .scarcity-text {
+            font-size: 0.85rem;
+            color: #ff5252;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .scarcity-bar {
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .scarcity-fill {
+            height: 100%;
+            width: 14%;
+            background: #ff5252;
+            border-radius: 10px;
+            animation: pulse-bar 2s infinite;
+            box-shadow: 0 0 10px #ff5252;
+        }
+        @keyframes pulse-bar {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+        .new-price {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 5px 0 15px 0;
+            line-height: 1;
+            letter-spacing: -2px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+        .new-price span { font-size: 1.8rem; vertical-align: super; font-weight: 600; margin-right: 5px;}
+        
+        .payment-alert {
+            color: var(--secondary);
+            background: rgba(0, 245, 212, 0.08);
+            border: 1px solid rgba(0, 245, 212, 0.2);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #0d0910;
+            color: #6b7280;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        footer p { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- Topbar: Gatilho de Frete Grátis -->
+    <div class="topbar">
+        🔥 PROMOÇÃO DE LANÇAMENTO: <span>FRETE GRÁTIS</span> PARA TODO O BRASIL!
+    </div>
+
+    <!-- Seção Principal (Hero) -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="tag"><i class="fa-solid fa-sparkles"></i> Design Profissional de Salão</span>
+                <h1>Transforme Seu Visual em Minutos com a <span>Escova 3 em 1</span></h1>
+                <p>Alisa, modela e dá volume com facilidade profissional. A única com tecnologia de proteção térmica que sela as cutículas, garantindo brilho instantâneo e saúde total para seus fios.</p>
+                
+                <!-- Diferencial Forte: Risco Zero -->
+                <div class="trust-badge-delivery">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                    <div>
+                        <h4>Risco ZERO: Você só paga na entrega!</h4>
+                        <p>Elimine o medo de comprar online. Faça seu pedido agora e realize o pagamento somente quando o entregador deixar o produto na sua porta.</p>
+                    </div>
+                </div>
+
+                <a href="https://entrega.logzz.com.br/pay/memkmv448/1-unidade-escova-alisadora" class="btn-cta">
+                    QUERO RECEBER E PAGAR EM CASA
+                </a>
+            </div>
+            
+            <div class="product-image-wrapper">
+                <img src="https://imgur.com/IgiBWkh.jpg" alt="Escova 3 em 1 Designer Profissional" class="product-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Benefícios -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Por que esta é a <span>Melhor Escolha</span>?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h3>3 Funções em 1</h3>
+                    <p>Sua rotina muito mais prática. Alisa com precisão de salão, modela as pontas perfeitamente e cria um volume natural incrível em um único passo.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fa-solid fa-temperature-low"></i>
+                    <h3>Calor Inteligente</h3>
+                    <p>Aquecimento ultra rápido com distribuição 100% uniforme. Protege profundamente os seus cabelos contra danos térmicos severos.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <h3>Risco Zero Real</h3>
+                    <p>O único sistema onde sua confiança vem em primeiro lugar. Você só tira o dinheiro do bolso quando o produto estiver em suas mãos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nova Seção de Prova Social (Depoimentos) -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Quem Usa, <span>Aprova e Recomenda</span></h2>
+            <div class="testimonials-grid">
+                
+                <!-- Depoimento 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-profile">
+                        <img src="https://imgur.com/q38Y5qf.jpg" alt="Cliente Satisfeita Mariana" class="testimonial-img">
+                        <div class="testimonial-info">
+                            <h4>Mariana Souza</h4>
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-comment">"Confesso que comprei com medo, mas a opção de pagar só na entrega me deu segurança. A escova é maravilhosa! Alisa muito rápido e deixa um brilho de salão que dura o dia todo. Recomendo demais!"</p>
+                    <div class="verified-badge">
+                        <i class="fa-solid fa-circle-check"></i> Compra Verificada e Entregue
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-profile">
+                        <img src="https://imgur.com/WgGAEu2.jpg" alt="Cliente Satisfeita Amanda" class="testimonial-img">
+                        <div class="testimonial-info">
+                            <h4>Amanda Costa</h4>
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-comment">"Chegou em 4 dias aqui em casa! Facilitou 100% a minha rotina de manhã antes de ir trabalhar. Ela modela as pontas com muita facilidade e não queima o fio. O entregador foi super educado."</p>
+                    <div class="verified-badge">
+                        <i class="fa-solid fa-circle-check"></i> Compra Verificada e Entregue
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Oferta Irresistível -->
+    <section class="offer-section">
+        <div class="container">
+            <div class="offer-box">
+                <span class="tag" style="background-color: var(--primary); color: white;">CONDIÇÃO ESPECIAL</span>
+                <h3 style="margin-top: 15px; font-size: 2rem; color: #ffffff; font-weight: 800;">Garanta a Sua Escova Profissional</h3>
+                
+                <!-- Barra de escassez visual -->
+                <div class="scarcity-bar-container">
+                    <div class="scarcity-text">⚠️ Restam apenas 12 unidades com desconto!</div>
+                    <div class="scarcity-bar"><div class="scarcity-fill"></div></div>
+                </div>
+                
+                <p class="old-price">De R$ 249,90</p>
+                <p class="new-price"><span>R$</span>139,99</p>
+                
+                <div class="payment-alert">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    PAGAMENTO SÓ NA ENTREGA!
+                </div>
+                
+                <a href="https://entrega.logzz.com.br/pay/memkmv448/1-unidade-escova-alisadora" class="btn-cta" style="width: 100%; display: block; text-align: center;">
+                    GARANTIR MINHA ESCOVA AGORA
+                </a>
+                
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 20px; font-weight: 500;"><i class="fa-solid fa-lock" style="color: var(--secondary);"></i> Compra segura processada e rastreada pela plataforma Logzz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Escova Designer Profissional. Todos os direitos reservados.</p>
+            <p style="font-size: 0.8rem; color: #4b5563; max-width: 800px; margin: 0 auto; line-height: 1.5;">Esta oferta é de tempo limitado. Os pagamentos e toda a logística de envio nacional são operados com total criptografia e segurança através da Logzz do Brasil.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
