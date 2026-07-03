@@ -29,8 +29,8 @@
         }
 
         html {
-            scroll-behavior: smooth;
-            overflow-x: hidden; /* Evita rolagem horizontal acidental */
+            scroll-behavior: smooth; /* Garante o deslize suave até a oferta */
+            overflow-x: hidden; 
         }
 
         body {
@@ -395,22 +395,9 @@
             gap: 8px;
         }
 
-        /* Rodapé */
-        footer {
-            background: #0d0910;
-            color: #6b7280;
-            padding: 40px 0;
-            text-align: center;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-        }
-        footer p { margin-bottom: 8px; }
-
         /* ==============================
            MEDIA QUERIES (OTIMIZAÇÃO DE TELAS)
            ============================== */
-        
-        /* Tablets e Telas Médias (Até 992px) */
         @media (max-width: 992px) {
             .hero { padding: 50px 0; }
             .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
@@ -418,13 +405,12 @@
             h1 { font-size: 2.6rem; }
             .trust-badge-delivery { flex-direction: column; text-align: center; padding: 25px 20px; gap: 15px; }
             .trust-badge-delivery i { min-width: 60px; }
-            .product-image-wrapper { order: -1; max-width: 450px; margin: 0 auto; } /* Imagem sobe no mobile para gerar desejo visual imediato */
+            .product-image-wrapper { order: -1; max-width: 450px; margin: 0 auto; } 
             .benefits, .testimonials, .offer-section { padding: 60px 0; }
             .section-title { font-size: 2rem; margin-bottom: 40px; }
             .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
         }
 
-        /* Smartphones Pequenos (Até 576px) */
         @media (max-width: 576px) {
             h1 { font-size: 2.1rem; letter-spacing: -0.5px; }
             .hero p { font-size: 1rem; }
@@ -436,7 +422,6 @@
             .payment-alert { font-size: 0.95rem; width: 100%; }
         }
 
-        /* Ajuste para telas minúsculas (Ex: iPhone SE antigo / 320px) */
         @media (max-width: 360px) {
             h1 { font-size: 1.9rem; }
             .new-price { font-size: 2.8rem; }
@@ -467,7 +452,8 @@
                     </div>
                 </div>
 
-                <a href="https://entrega.logzz.com.br/pay/memkmv448/1-unidade-escova-alisadora" class="btn-cta">
+                <!-- Modificado: href agora aponta para o ID da oferta -->
+                <a href="#oferta" class="btn-cta">
                     QUERO RECEBER E PAGAR EM CASA
                 </a>
             </div>
@@ -554,8 +540,8 @@
         </div>
     </section>
 
-    <!-- Seção de Oferta Irresistível -->
-    <section class="offer-section">
+    <!-- Seção de Oferta Irresistível (Adicionado o ID "oferta" para o redirecionamento) -->
+    <section class="offer-section" id="oferta">
         <div class="container">
             <div class="offer-box">
                 <span class="tag" style="background-color: var(--primary); color: white;">CONDIÇÃO ESPECIAL</span>
@@ -575,6 +561,7 @@
                     PAGAMENTO SÓ NA ENTREGA!
                 </div>
                 
+                <!-- Este botão continua levando para o checkout final na plataforma -->
                 <a href="https://entrega.logzz.com.br/pay/memkmv448/1-unidade-escova-alisadora" class="btn-cta" style="width: 100%; display: block;">
                     GARANTIR MINHA ESCOVA AGORA
                 </a>
