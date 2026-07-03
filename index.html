@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Escova 3 em 1 Designer Profissional | Pagamento na Entrega</title>
     <!-- Google Fonts: Poppins para um visual moderno -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -11,12 +11,12 @@
     
     <style>
         :root {
-            --primary: #ff477e; /* Rosa magenta premium vibrante */
+            --primary: #ff477e; 
             --primary-hover: #e03a6c;
-            --secondary: #00f5d4; /* Verde/Azul turquesa neon para altíssimo contraste e destaque */
-            --bg-base: #1d1521; /* A sua cor base roxo profundo */
+            --secondary: #00f5d4; 
+            --bg-base: #1d1521; 
             --dark: #0d0910;
-            --text: #f3f4f6; /* Texto claro para leitura perfeita no fundo escuro */
+            --text: #f3f4f6; 
             --text-muted: #9ca3af;
             --shadow-lg: 0 20px 25px -5px rgba(255, 71, 126, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
         }
@@ -30,14 +30,16 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden; /* Evita rolagem horizontal acidental */
         }
 
         body {
             background-color: var(--bg-base);
-            /* Gradiente vertical suave cruzando toda a página para dar profundidade */
             background: linear-gradient(180deg, #1d1521 0%, #140e17 50%, #0d0910 100%);
             color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* Topbar de Aviso de Frete */
@@ -46,8 +48,8 @@
             border-bottom: 1px solid rgba(255, 71, 126, 0.2);
             color: #fff;
             text-align: center;
-            padding: 10px 10px;
-            font-size: 0.85rem;
+            padding: 10px;
+            font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -62,41 +64,34 @@
             50% { opacity: 0.6; }
         }
 
-        /* Container Geral */
+        /* Container Geral Responsivo */
         .container {
-            width: 92%;
+            width: 90%;
             max-width: 1140px;
             margin: 0 auto;
         }
 
-        /* Hero Section com Gradiente Radial Iluminado */
+        /* Hero Section */
         .hero {
-            /* Um ponto de luz roxo mais claro no canto superior direito simula iluminação de estúdio */
             background: radial-gradient(circle at 85% 30%, #3a2744 0%, #1d1521 65%, #140e17 100%);
-            padding: 90px 0;
+            padding: 80px 0;
             position: relative;
-            overflow: hidden;
         }
         
         .hero-grid {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 50px;
+            gap: 40px;
             align-items: center;
-        }
-        
-        @media (max-width: 992px) {
-            .hero { padding: 50px 0; }
-            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
         }
 
         .tag {
             background: rgba(255, 71, 126, 0.15);
             color: #ff6593;
-            padding: 8px 18px;
+            padding: 8px 16px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -106,10 +101,10 @@
         }
 
         h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 800;
             color: #ffffff;
-            line-height: 1.15;
+            line-height: 1.2;
             margin-bottom: 20px;
             letter-spacing: -1px;
         }
@@ -118,24 +113,20 @@
             text-shadow: 0 0 20px rgba(255, 71, 126, 0.3);
         }
 
-        @media (max-width: 576px) {
-            h1 { font-size: 2.3rem; }
-        }
-
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #e2e8f0;
             margin-bottom: 30px;
         }
 
-        /* Destaque do Pagamento na Entrega (Design Escuro Premium) */
+        /* Destaque do Pagamento na Entrega */
         .trust-badge-delivery {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-left: 5px solid var(--secondary);
             padding: 20px;
             border-radius: 4px 16px 16px 4px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -143,79 +134,79 @@
             backdrop-filter: blur(10px);
         }
         
-        @media (max-width: 992px) { 
-            .trust-badge-delivery { flex-direction: column; text-align: center; padding: 25px 20px; } 
-        }
-        
         .trust-badge-delivery i {
-            font-size: 2.3rem;
+            font-size: 2.2rem;
             color: var(--secondary);
             background: rgba(0, 245, 212, 0.1);
             padding: 15px;
             border-radius: 50%;
-            min-width: 65px;
-            height: 65px;
+            min-width: 60px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .trust-badge-delivery h4 {
             color: #ffffff;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             margin-bottom: 4px;
         }
         .trust-badge-delivery p {
             margin: 0;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             line-height: 1.4;
         }
 
-        /* Botão de Ação CTA Explosivo */
+        /* Botão de Ação CTA Adaptável */
         .btn-cta {
             display: inline-block;
             background: linear-gradient(135deg, var(--primary) 0%, #d91b5c 100%);
             color: #fff;
-            padding: 20px 40px;
-            font-size: 1.25rem;
+            padding: 18px 36px;
+            font-size: 1.15rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: 12px;
             box-shadow: var(--shadow-lg);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             animation: pulse 2.5s infinite;
             border: none;
             cursor: pointer;
+            text-align: center;
+            max-width: 100%;
         }
         .btn-cta:hover {
-            transform: translateY(-4px) scale(1.02);
+            transform: translateY(-2px);
             box-shadow: 0 25px 35px -5px rgba(255, 71, 126, 0.45);
         }
 
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(255, 71, 126, 0.6); }
-            70% { box-shadow: 0 0 0 18px rgba(255, 71, 126, 0); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 71, 126, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 71, 126, 0); }
         }
 
-        /* Imagem do Produto com Brilho Neon de Fundo */
+        /* Imagem do Produto */
         .product-image-wrapper {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
         }
         .product-image-wrapper::before {
             content: '';
             position: absolute;
-            width: 75%;
-            height: 75%;
-            background: rgba(255, 71, 126, 0.15);
+            width: 70%;
+            height: 70%;
+            background: rgba(255, 71, 126, 0.12);
             border-radius: 50%;
-            filter: blur(50px);
+            filter: blur(40px);
             z-index: 1;
         }
         .product-img {
@@ -225,22 +216,18 @@
             box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
             position: relative;
             z-index: 2;
-            transition: transform 0.5s ease;
-        }
-        .product-img:hover {
-            transform: scale(1.03);
         }
 
         /* Seção de Benefícios */
         .benefits {
-            padding: 100px 0;
-            background-color: #140e17; /* Tom ligeiramente mais escuro para quebrar as seções */
+            padding: 80px 0;
+            background-color: #140e17; 
         }
         .section-title {
             text-align: center;
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             color: #ffffff;
             letter-spacing: -0.5px;
         }
@@ -248,60 +235,55 @@
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
         .benefit-card {
             background: rgba(255, 255, 255, 0.02);
-            padding: 40px 30px;
+            padding: 35px 25px;
             border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.04);
         }
         .benefit-card:hover { 
-            transform: translateY(-8px); 
+            transform: translateY(-5px); 
             background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 71, 126, 0.3);
-            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5);
+            border-color: rgba(255, 71, 126, 0.25);
         }
         .benefit-card i {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--primary);
-            margin-bottom: 25px;
-            background: rgba(255, 71, 126, 0.1);
-            width: 80px;
-            height: 80px;
+            margin-bottom: 20px;
+            background: rgba(255, 71, 126, 0.08);
+            width: 70px;
+            height: 70px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border-radius: 20px;
+            border-radius: 16px;
         }
-        .benefit-card h3 { margin-bottom: 15px; font-size: 1.35rem; color: #ffffff; font-weight: 700; }
-        .benefit-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+        .benefit-card h3 { margin-bottom: 12px; font-size: 1.25rem; color: #ffffff; font-weight: 700; }
+        .benefit-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
 
-        /* Nova Seção de Prova Social (Depoimentos) */
+        /* Seção de Prova Social */
         .testimonials {
-            padding: 100px 0;
+            padding: 80px 0;
             background-color: var(--bg-base);
         }
         .testimonials-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        @media (max-width: 768px) {
-            .testimonials-grid { grid-template-columns: 1fr; }
+            gap: 25px;
         }
         .testimonial-card {
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 35px;
-            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 30px;
+            border-radius: 20px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            position: relative;
+            gap: 15px;
         }
         .testimonial-profile {
             display: flex;
@@ -309,25 +291,25 @@
             gap: 15px;
         }
         .testimonial-img {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--primary);
         }
         .testimonial-info h4 {
             color: #ffffff;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
         }
         .testimonial-stars {
             color: #ffb703;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             margin-top: 2px;
         }
         .testimonial-comment {
             color: #e2e8f0;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-style: italic;
             line-height: 1.5;
         }
@@ -343,38 +325,35 @@
 
         /* Oferta Irresistível */
         .offer-section {
-            padding: 100px 0;
+            padding: 80px 0;
             text-align: center;
             background: radial-gradient(circle at center, #251b2b 0%, #1d1521 100%);
         }
         .offer-box {
-            max-width: 680px;
+            max-width: 650px;
             margin: 0 auto;
-            border: 2px solid rgba(255, 71, 126, 0.25);
-            border-radius: 28px;
-            padding: 60px 40px;
+            border: 2px solid rgba(255, 71, 126, 0.2);
+            border-radius: 24px;
+            padding: 50px 30px;
             background: #140e17;
             position: relative;
             box-shadow: 0 30px 60px -15px rgba(255, 71, 126, 0.2);
         }
-        @media (max-width: 576px) {
-            .offer-box { padding: 40px 20px; }
-        }
         
         /* Barra de Escassez */
         .scarcity-bar-container {
-            max-width: 300px;
-            margin: 20px auto 30px auto;
+            max-width: 280px;
+            margin: 15px auto 25px auto;
         }
         .scarcity-text {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #ff5252;
             font-weight: 600;
             margin-bottom: 6px;
         }
         .scarcity-bar {
-            height: 8px;
-            background: rgba(255,255,255,0.1);
+            height: 7px;
+            background: rgba(255,255,255,0.08);
             border-radius: 10px;
             overflow: hidden;
         }
@@ -383,58 +362,85 @@
             width: 14%;
             background: #ff5252;
             border-radius: 10px;
-            animation: pulse-bar 2s infinite;
-            box-shadow: 0 0 10px #ff5252;
-        }
-        @keyframes pulse-bar {
-            0% { opacity: 0.7; }
-            50% { opacity: 1; }
-            100% { opacity: 0.7; }
+            box-shadow: 0 0 8px #ff5252;
         }
 
         .old-price {
             text-decoration: line-through;
             color: var(--text-muted);
-            font-size: 1.3rem;
-            font-weight: 500;
+            font-size: 1.2rem;
         }
         .new-price {
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-weight: 800;
             color: #ffffff;
-            margin: 5px 0 15px 0;
+            margin: 5px 0 10px 0;
             line-height: 1;
-            letter-spacing: -2px;
-            text-shadow: 0 0 20px rgba(255,255,255,0.1);
+            letter-spacing: -1px;
         }
-        .new-price span { font-size: 1.8rem; vertical-align: super; font-weight: 600; margin-right: 5px;}
+        .new-price span { font-size: 1.6rem; vertical-align: super; font-weight: 600; margin-right: 3px;}
         
         .payment-alert {
             color: var(--secondary);
-            background: rgba(0, 245, 212, 0.08);
-            border: 1px solid rgba(0, 245, 212, 0.2);
-            padding: 12px 25px;
+            background: rgba(0, 245, 212, 0.06);
+            border: 1px solid rgba(0, 245, 212, 0.15);
+            padding: 10px 20px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 35px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            letter-spacing: 0.5px;
+            gap: 8px;
         }
 
         /* Rodapé */
         footer {
             background: #0d0910;
             color: #6b7280;
-            padding: 50px 0;
+            padding: 40px 0;
             text-align: center;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
-        footer p { margin-bottom: 10px; }
+        footer p { margin-bottom: 8px; }
+
+        /* ==============================
+           MEDIA QUERIES (OTIMIZAÇÃO DE TELAS)
+           ============================== */
+        
+        /* Tablets e Telas Médias (Até 992px) */
+        @media (max-width: 992px) {
+            .hero { padding: 50px 0; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            .tag { margin-bottom: 15px; }
+            h1 { font-size: 2.6rem; }
+            .trust-badge-delivery { flex-direction: column; text-align: center; padding: 25px 20px; gap: 15px; }
+            .trust-badge-delivery i { min-width: 60px; }
+            .product-image-wrapper { order: -1; max-width: 450px; margin: 0 auto; } /* Imagem sobe no mobile para gerar desejo visual imediato */
+            .benefits, .testimonials, .offer-section { padding: 60px 0; }
+            .section-title { font-size: 2rem; margin-bottom: 40px; }
+            .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+
+        /* Smartphones Pequenos (Até 576px) */
+        @media (max-width: 576px) {
+            h1 { font-size: 2.1rem; letter-spacing: -0.5px; }
+            .hero p { font-size: 1rem; }
+            .btn-cta { width: 100%; padding: 16px 20px; font-size: 1.05rem; }
+            .benefit-card { padding: 30px 20px; }
+            .testimonial-card { padding: 20px; }
+            .offer-box { padding: 40px 20px; border-radius: 20px; }
+            .new-price { font-size: 3.2rem; }
+            .payment-alert { font-size: 0.95rem; width: 100%; }
+        }
+
+        /* Ajuste para telas minúsculas (Ex: iPhone SE antigo / 320px) */
+        @media (max-width: 360px) {
+            h1 { font-size: 1.9rem; }
+            .new-price { font-size: 2.8rem; }
+        }
     </style>
 </head>
 <body>
@@ -467,7 +473,7 @@
             </div>
             
             <div class="product-image-wrapper">
-                <img src="https://imgur.com/IgiBWkh.jpg" alt="Escova 3 em 1 Designer Profissional" class="product-img">
+                <img src="https://imgur.com/IgiBWkh.jpg" alt="Escova 3 em 1 Designer Profissional" class="product-img" loading="eager">
             </div>
         </div>
     </section>
@@ -496,7 +502,7 @@
         </div>
     </section>
 
-    <!-- Nova Seção de Prova Social (Depoimentos) -->
+    <!-- Seção de Prova Social (Depoimentos) -->
     <section class="testimonials">
         <div class="container">
             <h2 class="section-title">Quem Usa, <span>Aprova e Recomenda</span></h2>
@@ -505,7 +511,7 @@
                 <!-- Depoimento 1 -->
                 <div class="testimonial-card">
                     <div class="testimonial-profile">
-                        <img src="https://imgur.com/q38Y5qf.jpg" alt="Cliente Satisfeita Mariana" class="testimonial-img">
+                        <img src="https://imgur.com/q38Y5qf.jpg" alt="Cliente Satisfeita Mariana" class="testimonial-img" loading="lazy">
                         <div class="testimonial-info">
                             <h4>Mariana Souza</h4>
                             <div class="testimonial-stars">
@@ -526,7 +532,7 @@
                 <!-- Depoimento 2 -->
                 <div class="testimonial-card">
                     <div class="testimonial-profile">
-                        <img src="https://imgur.com/WgGAEu2.jpg" alt="Cliente Satisfeita Amanda" class="testimonial-img">
+                        <img src="https://imgur.com/WgGAEu2.jpg" alt="Cliente Satisfeita Amanda" class="testimonial-img" loading="lazy">
                         <div class="testimonial-info">
                             <h4>Amanda Costa</h4>
                             <div class="testimonial-stars">
@@ -553,7 +559,7 @@
         <div class="container">
             <div class="offer-box">
                 <span class="tag" style="background-color: var(--primary); color: white;">CONDIÇÃO ESPECIAL</span>
-                <h3 style="margin-top: 15px; font-size: 2rem; color: #ffffff; font-weight: 800;">Garanta a Sua Escova Profissional</h3>
+                <h3 style="margin-top: 5px; font-size: 1.8rem; color: #ffffff; font-weight: 800;">Garanta a Sua Escova Profissional</h3>
                 
                 <!-- Barra de escassez visual -->
                 <div class="scarcity-bar-container">
@@ -569,11 +575,11 @@
                     PAGAMENTO SÓ NA ENTREGA!
                 </div>
                 
-                <a href="https://entrega.logzz.com.br/pay/memkmv448/1-unidade-escova-alisadora" class="btn-cta" style="width: 100%; display: block; text-align: center;">
+                <a href="https://entrega.logzz.com.br/pay/memkmv448/1-unidade-escova-alisadora" class="btn-cta" style="width: 100%; display: block;">
                     GARANTIR MINHA ESCOVA AGORA
                 </a>
                 
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 20px; font-weight: 500;"><i class="fa-solid fa-lock" style="color: var(--secondary);"></i> Compra segura processada e rastreada pela plataforma Logzz.</p>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 20px; font-weight: 500;"><i class="fa-solid fa-lock" style="color: var(--secondary);"></i> Compra segura processada e rastreada pela plataforma Logzz.</p>
             </div>
         </div>
     </section>
@@ -582,7 +588,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 Escova Designer Profissional. Todos os direitos reservados.</p>
-            <p style="font-size: 0.8rem; color: #4b5563; max-width: 800px; margin: 0 auto; line-height: 1.5;">Esta oferta é de tempo limitado. Os pagamentos e toda a logística de envio nacional são operados com total criptografia e segurança através da Logzz do Brasil.</p>
+            <p style="font-size: 0.75rem; color: #4b5563; max-width: 800px; margin: 0 auto; line-height: 1.5;">Esta oferta é de tempo limitado. Os pagamentos e toda a logística de envio nacional são operados com total criptografia e segurança através da Logzz do Brasil.</p>
         </div>
     </footer>
 
